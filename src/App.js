@@ -388,8 +388,8 @@ class App extends Component {
             body: JSON.stringify({
                 username: this.state.username,
                 password: this.state.password,
-                trackedBills: [],
-                trackedReps: []
+                // trackedBills: [],
+                // trackedReps: []
             }),
             credentials: 'include',
             headers: {
@@ -404,7 +404,7 @@ class App extends Component {
         console.log('JSON RESPONSE FROM EXPRESS', parsedResponse);
         const jsonString = parsedResponse.data;
         const id = JSON.parse(jsonString).userId;
-        const tracked = JSON.parse(jsonString).trackedBills;
+        // const tracked = JSON.parse(jsonString).trackedBills;
         console.log('THIS IS THE ID', id);
         if (parsedResponse.status === 200){
           this.loginSuccess(id, tracked);
