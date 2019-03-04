@@ -66,7 +66,7 @@ class App extends Component {
       query: '',
       queryBtn: 0,
       bills: [],
-      tracked_bills: [],
+      trackedBills: [],
       trackedReps: [],
       // trendingBills: parsedData.tempData,
       trendingBills: [],
@@ -156,7 +156,7 @@ class App extends Component {
       logged: true,
       failedEntry: false,
       _id: userId,
-      tracked_bills: tracked
+      trackedBills: tracked
     }, function() {
       console.log(`LOGGED IN. LOGGED: ${this.state.logged}, ID: ${this.state._id}, BILLS: ${this.state.trackedBills}`);
     });
@@ -218,7 +218,7 @@ class App extends Component {
           }
           console.log('got to line 215')
           this.setState({ 
-            tracked_bills: [...this.state.tracked_bills, parsedIsUserTracking/*, parsedUpdateBill.data*/],
+            trackedBills: [...this.state.trackedBills, parsedIsUserTracking/*, parsedUpdateBill.data*/],
             bills: updatedArray
           }, function() {
             // console.log(`TRACKING BILL ${this.state.trackedBills[this.state.trackedBills.length-1]._id}`);
@@ -443,7 +443,7 @@ class App extends Component {
         console.log('JSON RESPONSE FROM Backend', parsedResponse);
         // const jsonString = parsedResponse;
         const id = parsedResponse.id
-        const tracked = parsedResponse.tracked_bills;
+        const tracked = parsedResponse.trackedBills;
         console.log('THIS IS THE ID', id);
         if (parsedResponse){
           this.loginSuccess(id, tracked);
