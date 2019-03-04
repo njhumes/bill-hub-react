@@ -381,6 +381,7 @@ class App extends Component {
   }
   handleRegister = async (e) => {
     e.preventDefault();
+    console.log('register test');
     try {
         const loginResponse = await fetch(`${process.env.REACT_APP_BACKEND_ADDRESS}/auth/register`, {
             method: 'POST',
