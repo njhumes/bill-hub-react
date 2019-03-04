@@ -66,7 +66,7 @@ class App extends Component {
       query: '',
       queryBtn: 0,
       bills: [],
-      trackedBills: [],
+      tracked_bills: [],
       trackedReps: [],
       // trendingBills: parsedData.tempData,
       trendingBills: [],
@@ -156,7 +156,7 @@ class App extends Component {
       logged: true,
       failedEntry: false,
       _id: userId,
-      trackedBills: tracked
+      tracked_bills: tracked
     }, function() {
       console.log(`LOGGED IN. LOGGED: ${this.state.logged}, ID: ${this.state._id}, BILLS: ${this.state.trackedBills}`);
     });
@@ -218,7 +218,7 @@ class App extends Component {
           }
           console.log('got to line 215')
           this.setState({ 
-            trackedBills: [...this.state.trackedBills, parsedIsUserTracking/*, parsedUpdateBill.data*/],
+            tracked_bills: [...this.state.tracked_bills, parsedIsUserTracking/*, parsedUpdateBill.data*/],
             bills: updatedArray
           }, function() {
             // console.log(`TRACKING BILL ${this.state.trackedBills[this.state.trackedBills.length-1]._id}`);
